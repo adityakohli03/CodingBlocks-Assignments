@@ -1,0 +1,225 @@
+html{
+    scroll-behavior: smooth;
+}
+*{
+    padding: 0; margin: 0;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #36404b;
+    /*height: 3em;*/
+
+}
+.logo{
+    margin: 0 0 0 0.45em;
+}
+    .logo, .navigation{
+        list-style: none;
+    }
+    .logo a{
+        color: black;
+        letter-spacing: 0.1em;
+        font-family: 'Pacifico', cursive;
+
+    }
+a{
+    text-decoration: none;
+    letter-spacing: 0.4rem;
+    color: #343a40;
+    font-family: 'Abril Fatface', cursive;
+    font-weight: bold;
+}
+.navigation{
+    display: flex;
+}
+    .navigation a{
+        display: block;
+        padding: 1em;
+        color: white;
+    }
+    .navigation a:hover{
+        background-color: white;
+        color: black;
+    }
+@media all and (max-width: 990px) {
+    .container {
+        flex-direction: column;
+    }
+        
+    .logo {
+        margin: 0;
+    }
+        
+    .navigation  {
+          width: 100%;
+          justify-content: space-around;
+    }
+}
+@media all and (max-width: 600px) {
+ 
+    .logo {
+      margin: .25em 0;
+      align-self: left; 
+  }
+    
+    .navigation {
+      flex-direction: column;
+    }
+    
+    .navigation a { 
+      text-align: center; 
+      padding: 10px;
+       
+    }
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+/*html,
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  background-color: #3c3c3c;
+}
+*/
+
+
+.card {
+  position:relative;
+  display: block;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+}
+
+/*Light blue cover above the slide show*/
+.card::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 900;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  
+}
+
+.card_part {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 7;
+
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  
+  transform: translateX( 700px );
+  background-image: url( https://aussiev8supercars.com/wp-content/uploads/2019/11/V8-Supercars.jpg );
+  background-repeat: no-repeat;
+  background-size: 100%;
+  
+  animation: opaqTransition 28s cubic-bezier(0, 0, 0, 0.97) infinite;
+}
+
+
+.card_part.card_part-two {
+  z-index: 6;
+  background-image: url( https://icdn2.digitaltrends.com/image/digitaltrends/dt-geneva-bugatti-la-voiture-noire-1200x630-c-ar1.91.jpg );
+  background-repeat: no-repeat;
+  background-size:cover;
+  animation-delay: 7s;
+}
+
+.card_part.card_part-three {
+  z-index: 5;
+  background-image: url( https://images.unsplash.com/photo-1516515429572-bf32372f2409?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80 );
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation-delay: 14s;
+}
+
+.card_part.card_part-four {
+  z-index: 4;
+  background-image: url(https://robbreport.com/wp-content/uploads/2018/04/0_ferrari-portofino.jpg?w=1024);
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation-delay: 21s;
+}
+
+
+@keyframes opaqTransition {
+  3% { transform: translateX( 0 ); }
+  25% { transform: translateX( 0 ); }
+  28% { transform: translateX( -1163px ); }
+  100% { transform: translateX( -1163px ); }
+}
+
+.flipCardContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    width: 100%;
+}
+.wrap{
+  background-color: transparent;
+  width: 275px;
+  height: 275px;
+  perspective: 1000px;
+  transition: 1s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+}
+.wrap:hover{
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+.side-a, .side-b{
+    position: absolute;
+    backface-visibility: hidden;
+    width: 275px;
+  height: 275px;
+  -webkit-backface-visibility: hidden;
+}
+.side-a{
+  z-index: 1;
+}
+.side-b{
+  transform: rotateY(180deg);
+  font-size: 1.5em;
+  padding: 16px;
+  background-color: #e5e5e5;
+}
+h2{
+  text-align: center;
+}
+section div img {
+    height: 275px;
+    width: 275px;
+  }
+    
+footer {
+    text-align: center;
+    padding: 5px;
+    background: #495057;
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+  }
